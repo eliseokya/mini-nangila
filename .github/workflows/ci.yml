@@ -26,38 +26,32 @@ jobs:
         uses: Swatinem/rust-cache@v2
         with:
           workspaces: |
-            nangila/mini-nangila -> target
+            . -> target
 
       - name: Build
-        working-directory: nangila/mini-nangila
         run: |
           cargo build --all --release
 
       - name: Lint
-        working-directory: nangila/mini-nangila
         run: |
           rustup component add clippy
           cargo clippy --workspace -- -D warnings
 
       - name: Format check
-        working-directory: nangila/mini-nangila
         run: |
           rustup component add rustfmt
           cargo fmt --all -- --check
 
       - name: Documentation
-        working-directory: nangila/mini-nangila
         run: |
           cargo doc --no-deps --workspace
 
       - name: Test
-        working-directory: nangila/mini-nangila
         run: |
           cargo test --all --release
 
       - name: Run verification script
         if: matrix.os == 'ubuntu-latest'
-        working-directory: nangila/mini-nangila
         run: |
           bash scripts/verify.sh
 
@@ -67,5 +61,5 @@ jobs:
         with:
           name: verification-artifacts
           path: |
-            nangila/mini-nangila/verification/*
+            verification/*
 
