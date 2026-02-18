@@ -5,9 +5,6 @@ use thiserror::Error;
 /// Precision: 2^-23 (~1e-7)
 /// Zero handling: Represents exact 0.0
 /// Overflow behavior: Saturating (Clamping)
-
-/// Overflow behavior: Saturating (Clamping)
-
 pub(crate) const FRACTIONAL_BITS: i32 = 23;
 const SCALE_FACTOR: f32 = (1 << FRACTIONAL_BITS) as f32;
 const MIN_VAL_I32: i32 = i32::MIN;
