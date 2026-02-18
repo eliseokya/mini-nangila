@@ -317,11 +317,11 @@ to reconstruct exact length for non‑multiple‑of‑32 inputs.
 - [x] Static topology masking
 - [x] Documentation foundation (Architecture/Benchmarks/Expected Performance)
 
-### Phase 2: Real-World Examples (Weeks 5-8) 🚧
-- [ ] NanoGPT 2-GPU DDP compression example
-- [ ] LAMMPS trajectory compression (ε verification + HDF5)
-- [ ] Rotor twin sensor sync demo
-- [ ] Integration testing
+### Phase 2: Real-World Examples (Weeks 5-8) ✅
+- [x] NanoGPT gradient compression (synthetic DDP)
+- [x] LAMMPS trajectory compression (ε verification)
+- [x] Rotor twin sensor sync demo
+- [x] Integration testing
 
 ---
 
