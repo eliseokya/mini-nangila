@@ -193,7 +193,7 @@ impl UnifiedQuantizer {
                 
                 for (i, &val) in chunk.iter().enumerate() {
                     let q = self.stochastic_round(val / scale, 4);
-                    let clamped = q.max(-8).min(7) as i8;
+                    let clamped = q.clamp(-8.0, 7.0) as i8;
                     let nibble = (clamped & 0x0F) as u8;
                     
                     if i == 0 {
@@ -209,14 +209,14 @@ impl UnifiedQuantizer {
             // One value per byte
             for &val in &floats {
                 let q = self.stochastic_round(val / scale, 8);
-                let clamped = q.max(-128).min(127) as i8;
+                let clamped = q.clamp(-128.0, 127.0) as i8;
                 compressed.push(clamped as u8);
             }
         } else {
             // Fallback: use 8-bit
             for &val in &floats {
                 let q = (val / scale).round();
-                let clamped = q.max(-128.0).min(127.0) as i8;
+                let clamped = q.clamp(-128.0, 127.0) as i8;
                 compressed.push(clamped as u8);
             }
         }
@@ -322,7 +322,7 @@ impl UnifiedQuantizer {
                 if val.abs() >= threshold {
                     mask |= 1 << i;
                     let q = (val / scale).round();
-                    let clamped = q.max(-128.0).min(127.0) as i8;
+                    let clamped = q.clamp(-128.0, 127.0) as i8;
                     values.push(clamped as u8);
                 }
             }
@@ -343,7 +343,7 @@ impl UnifiedQuantizer {
 
         let mut ptr = 4;
         let block_size = 32usize;
-        let num_blocks = (n + block_size - 1) / block_size;
+        let num_blocks = n.div_ceil(block_size);
 
         for b in 0..num_blocks {
             if ptr + 4 > compressed.len() {
