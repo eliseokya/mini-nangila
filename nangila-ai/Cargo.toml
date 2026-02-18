@@ -1,0 +1,19 @@
+[package]
+name = "nangila-ai"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nangila-core = { path = "../nangila-core" }
+nangila-math = { path = "../nangila-math" }
+
+thiserror = "1.0"
+rand = "0.8"
+
+[dependencies.tch]
+version = "0.13"
+optional = true
+
+[dev-dependencies]
+proptest.workspace = true

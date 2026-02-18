@@ -1,0 +1,11 @@
+[package]
+name = "mode-switching"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+nangila-core = { path = "../../nangila-core" }
+nangila-math = { path = "../../nangila-math" }
+nangila-ai = { path = "../../nangila-ai" }
+clap = { version = "4", features = ["derive"] }
+nangila-hpc = { path = "../../nangila-hpc" }

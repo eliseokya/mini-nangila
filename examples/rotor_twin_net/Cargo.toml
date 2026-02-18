@@ -1,0 +1,24 @@
+[workspace]
+
+[package]
+name = "rotor-twin-net"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = []
+net = ["tokio", "tonic", "prost", "prost-types"]
+
+[dependencies]
+nangila-ai = { path = "../../nangila-ai" }
+nangila-hpc = { path = "../../nangila-hpc" }
+nangila-core = { path = "../../nangila-core" }
+nangila-math = { path = "../../nangila-math" }
+clap = { version = "4", features = ["derive"] }
+tokio = { version = "1.32", features = ["full"], optional = true }
+tonic = { version = "0.9", features = ["transport"], optional = true }
+prost = { version = "0.11", optional = true }
+prost-types = { version = "0.11", optional = true }
+
+[build-dependencies]
+tonic-build = { version = "0.9" }

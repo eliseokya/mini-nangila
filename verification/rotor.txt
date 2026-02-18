@@ -1,0 +1,7 @@
+Rotor Twin Streaming Demo — 3s @ 50 Hz
+Start: 2026-02-11 15:04:49.231668 UTC
+t=   0s  compression=  1.50×  rms_err=0.00408
+t=   1s  compression=  1.50×  rms_err=0.02320
+t=   2s  compression=  1.50×  rms_err=0.02374
+Done: 2026-02-11 15:04:52.742479 UTC
+Total raw: 3.52 KB, tx: 2.34 KB, ratio: 1.50×, RMS err: 0.02304

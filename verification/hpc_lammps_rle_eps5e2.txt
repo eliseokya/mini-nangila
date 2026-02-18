@@ -1,0 +1,13 @@
+Reading LAMMPS dump: benchmarks/data/trajectory.dump
+Codec: ErrorBoundedINT16 + RLE (ε = 5.000e-2)
+step    0  ratio   2.00×  max_err 0.049999
+step   10  ratio   2.63×  max_err 0.050000
+step   20  ratio   2.68×  max_err 0.050000
+step   30  ratio   2.71×  max_err 0.050000
+step   40  ratio   2.72×  max_err 0.050000
+step   50  ratio   2.72×  max_err 0.050000
+step   60  ratio   2.73×  max_err 0.050000
+step   70  ratio   2.73×  max_err 0.050000
+step   80  ratio   2.73×  max_err 0.050000
+step   90  ratio   2.74×  max_err 0.050000
+DONE  compressed=43.84 MB  raw=120.00 MB  ratio=2.74×  max_err=0.050000

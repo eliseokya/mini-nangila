@@ -1,0 +1,9 @@
+[package]
+name = "topology-calibration"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+nangila-core = { path = "../../nangila-core" }
+nangila-math = { path = "../../nangila-math" }
+rand = "0.8"

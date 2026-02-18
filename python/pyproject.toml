@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nangila-ddp"
+version = "0.1.0"
+description = "DDP INT4 communication hook for predictive-residual compression (CPU/GPU)"
+authors = [{ name = "Nangila" }]
+requires-python = ">=3.8"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+dependencies = [
+    "torch>=2.0",
+    "matplotlib>=3.5",
+]
+
+[tool.setuptools]
+packages = ["nangila_ddp", "nangila_ddp.examples"]
+

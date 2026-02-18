@@ -1,0 +1,46 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Mini-Nangila
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Carelt
+    family-names: Chirara
+    email: craig@nangila.io
+    affiliation: Nangila
+repository-code: 'https://github.com/nangila/nangila'
+url: 'https://nangila.io'
+abstract: >-
+  Mini-Nangila is a CPU-based reference implementation of
+  the Nangila predictive-residual compression framework.
+  It demonstrates deterministic Q8.23 arithmetic,
+  predictor-quantizer architectures, and topology-aware
+  compression for AI training, HPC simulation, and digital
+  twin applications. Achieves 20-120× compression ratios
+  with bounded reconstruction error.
+keywords:
+  - compression
+  - predictive-coding
+  - AI training
+  - HPC
+  - digital twins
+  - gradient compression
+  - error-bounded quantization
+  - fixed-point arithmetic
+license: Apache-2.0
+version: 0.1.0
+date-released: '2026-02-12'
+preferred-citation:
+  type: article
+  title: 'Nangila: A Unified State-Space Framework for Predictive Compression'
+  authors:
+    - given-names: Carelt
+      family-names: Chirara
+      affiliation: Nangila
+  year: 2026
+  journal: 'arXiv preprint'
+  notes: 'Whitepaper describing the Nangila framework and dual-mode architecture'

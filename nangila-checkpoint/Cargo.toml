@@ -1,0 +1,21 @@
+[package]
+name = "nangila-checkpoint"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[features]
+default = []
+hdf5 = ["dep:hdf5"]
+
+[dependencies]
+nangila-core = { path = "../nangila-core" }
+nangila-math = { path = "../nangila-math" }
+nangila-hpc = { path = "../nangila-hpc" }
+
+[dependencies.hdf5]
+version = "0.8"
+optional = true
+
+[dev-dependencies]
+tempfile = "3"

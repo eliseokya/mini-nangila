@@ -1,0 +1,18 @@
+[package]
+name = "nangila-twin"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nangila-core = { path = "../nangila-core" }
+nangila-math = { path = "../nangila-math" }
+prost = "0.11" # gRPC serialization
+tonic = "0.9"  # gRPC transport
+tokio = { version = "1.28", features = ["full"] }
+thiserror = "1.0"
+
+[dev-dependencies]
+nangila-ai = { path = "../nangila-ai" }
+nangila-hpc = { path = "../nangila-hpc" }
+proptest.workspace = true

@@ -1,0 +1,7 @@
+Reading LAMMPS dump: data/synth_20k_50.dump
+step    0  ratio   2.00×  max_err 0.001000
+step   10  ratio   2.00×  max_err 0.001000
+step   20  ratio   2.00×  max_err 0.001000
+step   30  ratio   2.00×  max_err 0.001000
+step   40  ratio   2.00×  max_err 0.001000
+DONE  compressed=6.00 MB  raw=12.00 MB  ratio=2.00×  max_err=0.001000

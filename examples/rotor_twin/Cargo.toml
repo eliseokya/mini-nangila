@@ -1,0 +1,14 @@
+[package]
+name = "rotor-twin"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nangila-twin = { path = "../../nangila-twin" }
+nangila-ai = { path = "../../nangila-ai" }
+nangila-hpc = { path = "../../nangila-hpc" }
+nangila-core = { path = "../../nangila-core" }
+nangila-math = { path = "../../nangila-math" }
+rand = "0.8"
+clap = { version = "4", features = ["derive"] }
+chrono = { version = "0.4", default-features = false, features = ["clock"] }

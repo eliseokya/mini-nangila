@@ -1,0 +1,17 @@
+Running Mini-Nangila Throughput Benchmark (AI Mode)
+Step 0: Compression Ratio 4.00x
+Step 10: Compression Ratio 4.00x
+Step 20: Compression Ratio 4.00x
+Step 30: Compression Ratio 4.00x
+Step 40: Compression Ratio 4.00x
+Step 50: Compression Ratio 4.00x
+Step 60: Compression Ratio 4.00x
+Step 70: Compression Ratio 4.00x
+Step 80: Compression Ratio 4.00x
+Step 90: Compression Ratio 4.00x
+--------------------------------------------------
+Benchmark Complete
+Total Raw Data: 400.00 MB
+Total Compressed: 100.00 MB
+Final Compression Ratio: 4.00x (Target: >4x for INT8, >8x for INT4)
+Throughput (Raw): 201.32 MB/s

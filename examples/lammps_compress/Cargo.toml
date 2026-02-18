@@ -1,0 +1,12 @@
+[package]
+name = "lammps-compress"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nangila-hpc = { path = "../../nangila-hpc" }
+nangila-core = { path = "../../nangila-core" }
+nangila-math = { path = "../../nangila-math" }
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+byteorder = "1"

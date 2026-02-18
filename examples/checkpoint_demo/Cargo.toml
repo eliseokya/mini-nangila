@@ -1,0 +1,14 @@
+[package]
+name = "checkpoint-demo"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = []
+hdf5 = ["nangila-checkpoint/hdf5"]
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+nangila-checkpoint = { path = "../../nangila-checkpoint", default-features = false }
+

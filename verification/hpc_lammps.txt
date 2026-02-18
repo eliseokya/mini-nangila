@@ -1,0 +1,3 @@
+Reading LAMMPS dump: examples/lammps_compress/sample.dump
+step    0  ratio   1.38×  max_err 0.000000
+DONE  compressed=0.00 MB  raw=0.00 MB  ratio=1.38×  max_err=0.000000

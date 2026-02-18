@@ -1,0 +1,9 @@
+[package]
+name = "throughput-bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nangila-ai = { path = "../../nangila-ai" }
+nangila-core = { path = "../../nangila-core" }
+nangila-math = { path = "../../nangila-math" }

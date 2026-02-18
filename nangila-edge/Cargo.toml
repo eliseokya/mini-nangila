@@ -1,0 +1,12 @@
+[package]
+name = "nangila-edge"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[features]
+default = ["alloc"]
+alloc = []
+
+[dependencies]
+#! No deps to keep no_std minimal

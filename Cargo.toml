@@ -1,0 +1,31 @@
+[workspace]
+resolver = "2"
+members = [
+    "nangila-math",
+    "nangila-core",
+    "nangila-ai",
+    "nangila-hpc",
+    "nangila-twin",
+    "nangila-checkpoint",
+    "nangila-edge",
+    "examples/throughput_bench",
+    "examples/hpc_compress_bench",
+    "examples/cpu_compression_bench",
+    "examples/topology_calibration",
+    "examples/mode_switching",
+    "examples/nano_gpt",
+    "examples/lammps_compress",
+    "examples/rotor_twin",
+]
+exclude = [
+    "examples/rotor_twin_net",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Craig Chirara <craig@nangila.ai>"]
+license = "Apache-2.0"
+
+[workspace.dependencies]
+proptest = "1.4"

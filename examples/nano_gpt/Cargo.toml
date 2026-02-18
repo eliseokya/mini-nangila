@@ -1,0 +1,10 @@
+[package]
+name = "nano-gpt"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+nangila-core = { path = "../../nangila-core" }
+nangila-math = { path = "../../nangila-math" }
+nangila-ai = { path = "../../nangila-ai" }
+rand = "0.8"

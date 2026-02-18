@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  mini-nangila:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mini-nangila:latest
+    container_name: mini-nangila
+    volumes:
+      # Mount data directory for input/output
+      - ./data:/data
+      # Mount output directory
+      - ./output:/output
+    environment:
+      - RUST_BACKTRACE=1
+    # Override entrypoint for interactive use
+    entrypoint: /bin/bash
+
+  # Test runner
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    image: mini-nangila-test:latest
+    container_name: mini-nangila-test
+    command: cargo test --workspace --release
+    volumes:
+      - ./:/build
+      - cargo-cache:/usr/local/cargo/registry
+      - target-cache:/build/target
+    environment:
+      - RUST_BACKTRACE=1
+
+  # Benchmark runner
+  benchmark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mini-nangila:latest
+    container_name: mini-nangila-benchmark
+    command: throughput-bench
+    volumes:
+      - ./benchmarks:/benchmarks
+    environment:
+      - RUST_BACKTRACE=1
+
+volumes:
+  cargo-cache:
+  target-cache:

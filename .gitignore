@@ -1,0 +1,37 @@
+# Build
+target/
+
+# Compressed output artifacts
+*.nz
+compressed*
+topology_mask.bin
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Large benchmark data
+*.dump
+*.lammpstrj
+*.gz
+*.bz2
+benchmarks/data/
+benchmarks/results/
+examples/lammps_compress/data/
+examples/lammps_compress/output/
+
+# Deploy keys
+deploy_key
+deploy_key.pub

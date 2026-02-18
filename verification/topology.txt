@@ -1,0 +1,150 @@
+=== Topology Calibration Example ===
+
+Configuration:
+  Layers: 12
+  Calibration Steps: 100
+  Layer Size: 1024 parameters
+
+Collecting gradient statistics...
+
+Layer Variance Statistics:
+  Layer  0: variance = 0.024932
+  Layer  1: variance = 0.025223
+  Layer  2: variance = 0.026445
+  Layer  3: variance = 0.023976
+  Layer  4: variance = 0.011553
+  Layer  5: variance = 0.011520
+  Layer  6: variance = 0.011143
+  Layer  7: variance = 0.012777
+  Layer  8: variance = 0.005681
+  Layer  9: variance = 0.005152
+  Layer 10: variance = 0.005454
+  Layer 11: variance = 0.005104
+
+=== Generating Topology Masks ===
+
+Drop Percentage: 0%
+  Drivers: 12 layers [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  Passengers: 0 layers []
+  Compression Factor: 1.00×
+  Threshold Variance: 0.000000
+  Bandwidth Reduction: 1.00× (topology only)
+
+Drop Percentage: 20%
+  Drivers: 10 layers [0, 1, 2, 3, 4, 5, 6, 7, 8, 10]
+  Passengers: 2 layers [9, 11]
+  Compression Factor: 1.20×
+  Threshold Variance: 0.005454
+  Bandwidth Reduction: 1.20× (topology only)
+
+Drop Percentage: 30%
+  Drivers: 9 layers [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  Passengers: 3 layers [9, 10, 11]
+  Compression Factor: 1.33×
+  Threshold Variance: 0.005681
+  Bandwidth Reduction: 1.33× (topology only)
+
+Drop Percentage: 40%
+  Drivers: 8 layers [0, 1, 2, 3, 4, 5, 6, 7]
+  Passengers: 4 layers [8, 9, 10, 11]
+  Compression Factor: 1.50×
+  Threshold Variance: 0.011143
+  Bandwidth Reduction: 1.50× (topology only)
+
+Drop Percentage: 50%
+  Drivers: 6 layers [0, 1, 2, 3, 4, 7]
+  Passengers: 6 layers [5, 6, 8, 9, 10, 11]
+  Compression Factor: 2.00×
+  Threshold Variance: 0.011553
+  Bandwidth Reduction: 2.00× (topology only)
+
+✓ Saved recommended mask (30% drop) to topology_mask.bin
+  Size: 124 bytes
+✓ Verified mask serialization
+
+=== Example Training Loop Usage ===
+
+Simulating 5 training steps with topology masking:
+
+Step 0:
+  Layer  0: TRANSMIT (4096 bytes)
+  Layer  1: TRANSMIT (4096 bytes)
+  Layer  2: TRANSMIT (4096 bytes)
+  Layer  3: TRANSMIT (4096 bytes)
+  Layer  4: TRANSMIT (4096 bytes)
+  Layer  5: TRANSMIT (4096 bytes)
+  Layer  6: TRANSMIT (4096 bytes)
+  Layer  7: TRANSMIT (4096 bytes)
+  Layer  8: TRANSMIT (4096 bytes)
+  Layer  9: SKIP (saved 4096 bytes)
+  Layer 10: SKIP (saved 4096 bytes)
+  Layer 11: SKIP (saved 4096 bytes)
+  Total: 36 KB transmitted, 12 KB skipped
+  Compression: 1.33× (topology only)
+
+Step 1:
+  Layer  0: TRANSMIT (4096 bytes)
+  Layer  1: TRANSMIT (4096 bytes)
+  Layer  2: TRANSMIT (4096 bytes)
+  Layer  3: TRANSMIT (4096 bytes)
+  Layer  4: TRANSMIT (4096 bytes)
+  Layer  5: TRANSMIT (4096 bytes)
+  Layer  6: TRANSMIT (4096 bytes)
+  Layer  7: TRANSMIT (4096 bytes)
+  Layer  8: TRANSMIT (4096 bytes)
+  Layer  9: SKIP (saved 4096 bytes)
+  Layer 10: SKIP (saved 4096 bytes)
+  Layer 11: SKIP (saved 4096 bytes)
+  Total: 36 KB transmitted, 12 KB skipped
+  Compression: 1.33× (topology only)
+
+Step 2:
+  Layer  0: TRANSMIT (4096 bytes)
+  Layer  1: TRANSMIT (4096 bytes)
+  Layer  2: TRANSMIT (4096 bytes)
+  Layer  3: TRANSMIT (4096 bytes)
+  Layer  4: TRANSMIT (4096 bytes)
+  Layer  5: TRANSMIT (4096 bytes)
+  Layer  6: TRANSMIT (4096 bytes)
+  Layer  7: TRANSMIT (4096 bytes)
+  Layer  8: TRANSMIT (4096 bytes)
+  Layer  9: SKIP (saved 4096 bytes)
+  Layer 10: SKIP (saved 4096 bytes)
+  Layer 11: SKIP (saved 4096 bytes)
+  Total: 36 KB transmitted, 12 KB skipped
+  Compression: 1.33× (topology only)
+
+Step 3:
+  Layer  0: TRANSMIT (4096 bytes)
+  Layer  1: TRANSMIT (4096 bytes)
+  Layer  2: TRANSMIT (4096 bytes)
+  Layer  3: TRANSMIT (4096 bytes)
+  Layer  4: TRANSMIT (4096 bytes)
+  Layer  5: TRANSMIT (4096 bytes)
+  Layer  6: TRANSMIT (4096 bytes)
+  Layer  7: TRANSMIT (4096 bytes)
+  Layer  8: TRANSMIT (4096 bytes)
+  Layer  9: SKIP (saved 4096 bytes)
+  Layer 10: SKIP (saved 4096 bytes)
+  Layer 11: SKIP (saved 4096 bytes)
+  Total: 36 KB transmitted, 12 KB skipped
+  Compression: 1.33× (topology only)
+
+Step 4:
+  Layer  0: TRANSMIT (4096 bytes)
+  Layer  1: TRANSMIT (4096 bytes)
+  Layer  2: TRANSMIT (4096 bytes)
+  Layer  3: TRANSMIT (4096 bytes)
+  Layer  4: TRANSMIT (4096 bytes)
+  Layer  5: TRANSMIT (4096 bytes)
+  Layer  6: TRANSMIT (4096 bytes)
+  Layer  7: TRANSMIT (4096 bytes)
+  Layer  8: TRANSMIT (4096 bytes)
+  Layer  9: SKIP (saved 4096 bytes)
+  Layer 10: SKIP (saved 4096 bytes)
+  Layer 11: SKIP (saved 4096 bytes)
+  Total: 36 KB transmitted, 12 KB skipped
+  Compression: 1.33× (topology only)
+
+Note: In practice, Drivers would also be compressed with
+      predictive coding + quantization for additional 8-20× reduction.

@@ -1,0 +1,19 @@
+Running Mini-Nangila HPC Compression Benchmark (Mock LAMMPS)
+Step 0: Ratio 2.00x | Max Error 0.001000 (Bound: 0.001000)
+Step 10: Ratio 2.00x | Max Error 0.001000 (Bound: 0.001000)
+Step 20: Ratio 2.00x | Max Error 0.001000 (Bound: 0.001000)
+Step 30: Ratio 2.00x | Max Error 0.001000 (Bound: 0.001000)
+Step 40: Ratio 2.00x | Max Error 0.001000 (Bound: 0.001000)
+Step 50: Ratio 2.00x | Max Error 0.001000 (Bound: 0.001000)
+Step 60: Ratio 2.00x | Max Error 0.001000 (Bound: 0.001000)
+Step 70: Ratio 2.00x | Max Error 0.001000 (Bound: 0.001000)
+Step 80: Ratio 2.00x | Max Error 0.001000 (Bound: 0.001000)
+Step 90: Ratio 2.00x | Max Error 0.001000 (Bound: 0.001000)
+--------------------------------------------------
+Benchmark Complete
+Total Raw Data: 38.15 MB
+Total Compressed: 19.07 MB
+Final Compression Ratio: 2.00x
+Max Absolute Error: 0.001000
+Throughput: 319.62 MB/s
+SUCCESS: Error bound respected.
