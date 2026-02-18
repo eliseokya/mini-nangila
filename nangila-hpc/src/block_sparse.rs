@@ -61,7 +61,7 @@ impl Quantizer for BlockSparseQuantizer {
         let n = u32::from_le_bytes([compressed[0], compressed[1], compressed[2], compressed[3]]) as usize;
         let mut ptr = 4usize;
         let bs = self.block_size;
-        let num_blocks = (n + bs - 1) / bs;
+        let num_blocks = n.div_ceil(bs);
         let mut out: Vec<f32> = Vec::with_capacity(num_blocks * bs);
 
         for b in 0..num_blocks {

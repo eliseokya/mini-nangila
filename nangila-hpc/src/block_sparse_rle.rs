@@ -30,7 +30,7 @@ impl Quantizer for BlockSparseRleQuantizer {
         let bs = self.block_size;
 
         // First compute masks and payloads per block
-        let num_blocks = (n + bs - 1) / bs;
+        let num_blocks = n.div_ceil(bs);
         let mut masks: Vec<u32> = Vec::with_capacity(num_blocks);
         let mut payloads: Vec<Vec<i16>> = Vec::with_capacity(num_blocks);
         for b in 0..num_blocks {
@@ -87,7 +87,7 @@ impl Quantizer for BlockSparseRleQuantizer {
         if compressed.len() < 4 { return FixedPointBuffer::from_f32(&[]); }
         let n = u32::from_le_bytes([compressed[0], compressed[1], compressed[2], compressed[3]]) as usize;
         let bs = self.block_size;
-        let num_blocks = (n + bs - 1) / bs;
+        let num_blocks = n.div_ceil(bs);
         let mut out: Vec<f32> = Vec::with_capacity(num_blocks * bs);
         let mut ptr = 4usize;
         let mut b = 0usize;
@@ -99,7 +99,7 @@ impl Quantizer for BlockSparseRleQuantizer {
                 let count = ((opcode & 0x7F) as usize) + 1;
                 for k in 0..count {
                     let block_len = if b + k == num_blocks - 1 { n - (b + k) * bs } else { bs };
-                    for _ in 0..block_len { out.push(0.0); }
+                    out.extend(std::iter::repeat(0.0).take(block_len));
                 }
                 b += count;
             } else {
