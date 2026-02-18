@@ -193,7 +193,7 @@ impl UnifiedQuantizer {
                 
                 for (i, &val) in chunk.iter().enumerate() {
                     let q = self.stochastic_round(val / scale, 4);
-                    let clamped = q.clamp(-8.0, 7.0) as i8;
+                    let clamped = q.clamp(-8, 7) as i8;
                     let nibble = (clamped & 0x0F) as u8;
                     
                     if i == 0 {
@@ -209,7 +209,7 @@ impl UnifiedQuantizer {
             // One value per byte
             for &val in &floats {
                 let q = self.stochastic_round(val / scale, 8);
-                let clamped = q.clamp(-128.0, 127.0) as i8;
+                let clamped = q.clamp(-128, 127) as i8;
                 compressed.push(clamped as u8);
             }
         } else {
