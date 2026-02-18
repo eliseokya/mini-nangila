@@ -81,7 +81,7 @@ impl Quantizer for RunLengthQuantizer {
             if opcode >= 128 {
                 // Zero Run
                 let count = (opcode - 128 + 1) as usize;
-                reconstructed.extend(std::iter::repeat(0.0).take(count));
+                reconstructed.extend(std::iter::repeat_n(0.0, count));
             } else {
                 // Literal Run
                 let count = (opcode + 1) as usize;

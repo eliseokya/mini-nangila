@@ -99,7 +99,7 @@ impl Quantizer for BlockSparseRleQuantizer {
                 let count = ((opcode & 0x7F) as usize) + 1;
                 for k in 0..count {
                     let block_len = if b + k == num_blocks - 1 { n - (b + k) * bs } else { bs };
-                    out.extend(std::iter::repeat(0.0).take(block_len));
+                    out.extend(std::iter::repeat_n(0.0, block_len));
                 }
                 b += count;
             } else {
